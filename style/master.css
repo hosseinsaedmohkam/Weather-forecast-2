@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+body {
+  background: url(https://media.tahlilbazaar.com/d/2020/06/03/3/25796.jpg) no-repeat center/cover;
+  overflow: hidden;
+  color: #fff;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+
+}
+
+.card {
+
+  flex: 1;
+  max-width: 1600px;
+  height: 100vh;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title h1 {
+  text-align: center;
+  color: rgb(13, 12, 12);
+  margin-bottom: 20px;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchbox {
+  width: 30%;
+  display: flex;
+  gap: 10px;
+}
+
+.inp {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  direction: rtl;
+  background-color: rgba(255, 99, 71, 0.922);
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #0288d1;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #02bd05;
+}
+
+.main-info {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.extra-info {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.mini-card {
+  flex: 1;
+  height: 80%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(117, 238, 4, 0.47);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+
+}
+
+.mini-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.519);
+}
+
+.mini-card h1.temp {
+  font-size: 28px;
+  color: rgb(45, 3, 198);
+}
+
+.mini-card h2.city {
+  font-size: 22px;
+  color: black;
+}
+
+.weather_img {
+  width: 80px;
+  display: none;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.mini-card h4 {
+  font-size: 22px;
+  color: black;
+}
+
+.mini-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(45, 3, 198);
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.weatherInfo :hover {
+  transform: scale(1.05);
+
+}
+
+.day {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: rgb(5, 1, 1);
+}
+
+
+.colorday {
+  color: white;
+  font-style: italic;
+  font: bold;
+  font-size: 18px;
+}
+
+.hossein {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  text-align: center;
+}
+
+.hossein img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.hossein img:hover {
+  border-radius: 15px;
+  transform: scale(1.2);
+}
+
+.hossein figcaption {
+  font-size: 16px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.hossein:hover figcaption {
+  opacity: 1;
+}
+
+
+/* === حالت موبایل فقط دما و روز === */
+@media (max-width: 768px) {
+  .searchbox {
+    width: 90%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inp {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .weatherInfo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+
+  .day {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+  }
+
+ 
+  .day .temp {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  .day .day-name {
+    display: block;
+    font-size: 14px;
+    color: #ddd;
+  }
+
+  
+  .day img,
+  .day p,
+  .day span,
+  .day .overlay,
+  .day .extra-info,
+  .day .icon {
+    display: none !important;
+  }
+}
+
